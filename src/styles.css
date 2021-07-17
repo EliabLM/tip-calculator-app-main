@@ -1,0 +1,28 @@
+/* ===== Fuentes ===== */
+@import url("https://fonts.google.com/specimen/Space+Mono");
+
+/* ===== Variables ===== */
+:root {
+	/* Color primario */
+	--clr-primary-1: hsl(172, 67%, 45%);
+
+	/* Colores neutrales */
+	--clr-very-dark-cyan: hsl(183, 100%, 15%);
+	--clr-dark-grayish-cyan: hsl(186, 14%, 43%);
+	--clr-dark-grayish-cyan: hsl(184, 14%, 56%);
+	--clr-light-grayish-cyan: hsl(185, 41%, 84%);
+	--clr-light-grayish-cyan: hsl(189, 41%, 97%);
+	--clr-white: hsl(0, 0%, 100%);
+
+	/* Tipografia */
+	--ff-primary: "Space Mono", monospace;
+	--fs-primary: 24px;
+
+	/* --transition: all 0.3s linear; */
+	/* --spacing: 0.25rem; */
+	/* --radius: 0.5rem; */
+	--light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+	--dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+	--max-width: 1440px;
+	--fixed-width: 620px;
+}
