@@ -9,9 +9,9 @@
 	/* Colores neutrales */
 	--clr-very-dark-cyan: hsl(183, 100%, 15%);
 	--clr-dark-grayish-cyan: hsl(186, 14%, 43%);
-	--clr-dark-grayish-cyan: hsl(184, 14%, 56%);
+	--clr-dark-grayish-cyan-2: hsl(184, 14%, 56%);
 	--clr-light-grayish-cyan: hsl(185, 41%, 84%);
-	--clr-light-grayish-cyan: hsl(189, 41%, 97%);
+	--clr-light-grayish-cyan-2: hsl(189, 41%, 97%);
 	--clr-white: hsl(0, 0%, 100%);
 
 	/* Tipografia */
@@ -25,4 +25,58 @@
 	--dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 	--max-width: 1440px;
 	--fixed-width: 620px;
+}
+
+/* ===== Estilos globales ===== */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	/* justify-content: space-between; */
+	/* align-items: ; */
+	font-family: var(--ff-primary);
+	background: var(--clr-light-grayish-cyan);
+	/* line-height: 1.5; */
+	font-size: var(--fs-primary);
+	height: 100vh;
+}
+
+.title {
+	background: crimson;
+	text-align: center;
+	letter-spacing: 0.25rem;
+	text-transform: uppercase;
+	/* line-height: 1.25; */
+	/* margin-bottom: 0.75rem; */
+	color: var(--clr-dark-grayish-cyan);
+	align-content: center;
+	margin: 150px 0px 80px 0px;
+}
+
+.container {
+	display: flex;
+	background: var(--clr-white);
+	justify-content: center;
+	outline: 1px solid red;
+	height: 15rem;
+}
+
+.section-entradas {
+	background: cyan;
+}
+
+.section-salidas {
+	background: darkmagenta;
+}
+
+.footer {
+	/* display: flex; */
+	background: darkblue;
+	height: 3rem;
+	margin-top: auto;
 }
