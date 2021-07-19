@@ -6,7 +6,7 @@
 	/* Color primario */
 	--clr-primary-1: hsl(172, 67%, 45%);
 
-	/* Colores neutrales */
+	/* Colores secundarios */
 	--clr-very-dark-cyan: hsl(183, 100%, 15%);
 	--clr-dark-grayish-cyan: hsl(186, 14%, 43%);
 	--clr-dark-grayish-cyan-2: hsl(184, 14%, 56%);
@@ -18,9 +18,7 @@
 	--ff-primary: "Space Mono", monospace;
 	--fs-primary: 24px;
 
-	/* --transition: all 0.3s linear; */
-	/* --spacing: 0.25rem; */
-	/* --radius: 0.5rem; */
+	/* Algunas configuraciones */
 	--light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 	--dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 	--max-width: 1440px;
@@ -111,11 +109,6 @@ body {
 	border: 2px solid var(--clr-primary-1);
 }
 
-/* Agregar con JavaScript */
-/* .input-factura-total-color {
-	border: 2px solid var(--clr-primary-1);
-} */
-
 ::placeholder {
 	color: var(--clr-dark-grayish-cyan-2);
 }
@@ -167,11 +160,6 @@ body {
 	height: 48px;
 	border: none;
 }
-
-/* Agregar con JavaScript */
-/* .input-porcentajes-propina-color {
-	border: 2px solid var(--clr-primary-1);
-} */
 
 .input-porcentajes-propina::placeholder {
 	text-align: center;
@@ -232,11 +220,6 @@ body {
 	outline: none;
 	border: 2px solid orange;
 }
-
-/* Mostrar con JavaScript */
-/* .input-numero-personas-color {
-	border: 2px solid orange;
-} */
 
 /* ==================================================== */
 /* ================= Section salidas ================= */
