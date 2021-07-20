@@ -19,8 +19,6 @@
 	--fs-primary: 24px;
 
 	/* Algunas configuraciones */
-	--light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-	--dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 	--max-width: 1440px;
 	--fixed-width: 620px;
 	--border-radius: 25px;
@@ -63,7 +61,7 @@ body {
 	justify-content: space-between;
 }
 
-/* Elimina decoradores de los inputs */
+/* Elimina decoradores de los inputs tipo numero */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
 	-webkit-appearance: none;
