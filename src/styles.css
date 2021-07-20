@@ -63,6 +63,16 @@ body {
 	justify-content: space-between;
 }
 
+/* Elimina decoradores de los inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
 /* ==================================================== */
 /* ================= Section entradas ================= */
 /* ==================================================== */
@@ -142,6 +152,11 @@ body {
 }
 
 .btn:hover {
+	background-color: var(--clr-primary-1);
+	color: var(--clr-very-dark-cyan);
+}
+
+.btn-focus {
 	background-color: var(--clr-primary-1);
 	color: var(--clr-very-dark-cyan);
 }

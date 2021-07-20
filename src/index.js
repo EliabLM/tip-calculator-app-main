@@ -1,30 +1,29 @@
 // Funcionalidad
 
+// entradas
 const facturaTotal = document.querySelector(".input-factura-total");
 const porcentajePropina = document.querySelector(".input-porcentajes-propina");
 const numeroPersonas = document.querySelector(".input-numero-personas");
 const btns = document.querySelectorAll(".btn");
-const btnReset = document.querySelector(".btn-reset");
 
+// salidas
 const propinaPersona = document.querySelector(".tip-people");
 const propinaTotal = document.querySelector(".tip-total");
 
+// boton reset
+const btnReset = document.querySelector(".btn-reset");
+
+// advertencia
 const advertencia = document.querySelector(".show-title");
 
-// Mostrar signos de porcentajes y dolar
-// window.addEventListener("DOMContentLoaded", () => {
-// 	mostrarSignos();
-// });
+// variables operaciones
+let facturaInput = 0;
+let propina = 0;
+let propinaParcial = 0;
+let porcentaje = 10;
+let numPersonas = 0;
 
-// const mostrarSignos = () => {
-// 	btns.forEach((btn) => {
-// 		btn.textContent = `${btn.textContent}%`;
-// 	});
-// 	propinaPersona.textContent = `$${propinaPersona.textContent}`;
-// 	propinaTotal.textContent = `$${propinaTotal.textContent}`;
-// };
-
-// Advertencia Numero de personas
+// Advertencia Numero de personas debe ser mayor a 0
 numeroPersonas.addEventListener("input", (e) => {
 	if (e.target.value <= "0" || e.target.value === "") {
 		advertencia.classList.remove("no-mostrar");
@@ -33,29 +32,57 @@ numeroPersonas.addEventListener("input", (e) => {
 	}
 });
 
-const realizarOperacion = () => {};
-
-// Factura total
-facturaTotal.addEventListener("input", (e) => {
-	console.log(e.target.value);
-	console.log((propinaPersona.textContent = `$${e.target.value}`));
-});
-
-// Porcentaje custom
-porcentajePropina.addEventListener("input", (e) => {
-	console.log(e.target.value);
-});
-
-// Filtrar Botones
-const filtrarBtns = () => {
-	btns.forEach((btn) => {
-		btn.addEventListener("click", (e) => {
-			console.log(e.target.textContent);
-			e.target.style.background = `hsl(172, 67%, 45%)`;
-			e.target.style.color = `hsl(183, 100%, 15%)`;
-			// hace falta quitar el resto de botones
-		});
-	});
+const calcularPropinas = (factura, porcentaje) => {
+	const propinaFull = factura * (porcentaje / 100);
+	// propinaParcial = calcularPropinaPersona(propina, numPersonas);
+	return propinaFull;
 };
 
-filtrarBtns();
+const calcularPropinaPersona = (propina, personas) => {
+	const propinaParcial = propina / personas;
+	return propinaParcial;
+};
+
+// Capturar Factura
+
+const capturarFactura = facturaTotal.addEventListener("input", (factura) => {
+	console.log(factura.target.value);
+	valorFactura = factura.target.value;
+	return valorFactura;
+});
+
+// console.log(capturarFactura());
+
+// Capturar boton
+btns.forEach((btn) => {
+	btn.addEventListener("click", () => {
+		// cambiar estilo css
+		btnFormat = btn.textContent.replace(/[%]/g, ""); // eliminar el simbolo %
+		if (btnFormat) {
+			btn.classList.add("btn-focus");
+		} else {
+			btn.classList.remove("btn-focus");
+		}
+
+		valorFactura = capturarFactura();
+		total = calcularPropinas(valorFactura, btnFormat);
+		console.log(valorFactura);
+		console.log(btnFormat);
+		console.log(total);
+	});
+});
+
+// Capturar porcentaje custom
+porcentajePropina.addEventListener("input", (porcentajeCustom) => {
+	// agregarPorcentaje(porcentajeCustom.target.value);
+	// calcularPropinas();
+	console.log(porcentajeCustom.target.value);
+});
+
+// Capturar numero de personas
+numeroPersonas.addEventListener("input", (personas) => {
+	// agregarNumeroPersonas(personas.target.value);
+	console.log(personas.target.value);
+});
+
+const agregarFactura = (num) => {};
