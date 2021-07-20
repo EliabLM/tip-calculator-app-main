@@ -1,7 +1,7 @@
 // Funcionalidad
 
 // entradas
-const facturaTotal = document.querySelector(".input-factura-total");
+const facturaInput = document.querySelector(".input-factura-total");
 const porcentajePropina = document.querySelector(".input-porcentajes-propina");
 const numeroPersonas = document.querySelector(".input-numero-personas");
 const btns = document.querySelectorAll(".btn");
@@ -16,13 +16,6 @@ const btnReset = document.querySelector(".btn-reset");
 // advertencia
 const advertencia = document.querySelector(".show-title");
 
-// variables operaciones
-let facturaInput = 0;
-let propina = 0;
-let propinaParcial = 0;
-let porcentaje = 10;
-let numPersonas = 0;
-
 // Advertencia Numero de personas debe ser mayor a 0
 numeroPersonas.addEventListener("input", (e) => {
 	if (e.target.value <= "0" || e.target.value === "") {
@@ -32,57 +25,55 @@ numeroPersonas.addEventListener("input", (e) => {
 	}
 });
 
-const calcularPropinas = (factura, porcentaje) => {
-	const propinaFull = factura * (porcentaje / 100);
-	// propinaParcial = calcularPropinaPersona(propina, numPersonas);
-	return propinaFull;
-};
+// Calcular propina
+function calcularPropina() {
+	let factura = Number(facturaInput.value);
+	let tipPorcentajeCustom = porcentajePropina.value;
+	let numDePersonas = numeroPersonas.value;
 
-const calcularPropinaPersona = (propina, personas) => {
-	const propinaParcial = propina / personas;
-	return propinaParcial;
-};
+	if (numDePersonas > 0) {
+		if (tipPorcentajeCustom == 0) {
+			calculos();
+		} else {
+			valorPorcentaje = Number(tipPorcentajeCustom / 100);
+			calculos();
+		}
+	}
+
+	function calculos() {
+		let valorPropina = factura * valorPorcentaje;
+		let tipAmountPerson = (valorPropina / numDePersonas).toFixed(2);
+		let facturaTotal = factura + valorPropina;
+		let totalPerson = (facturaTotal / numDePersonas).toFixed(2);
+		propinaPersona.textContent = `$${tipAmountPerson}`;
+		propinaTotal.textContent = `$${totalPerson}`;
+	}
+}
 
 // Capturar Factura
+facturaInput.addEventListener("input", calcularPropina);
 
-const capturarFactura = facturaTotal.addEventListener("input", (factura) => {
-	console.log(factura.target.value);
-	valorFactura = factura.target.value;
-	return valorFactura;
-});
-
-// console.log(capturarFactura());
-
-// Capturar boton
+// Capturar botonn
 btns.forEach((btn) => {
-	btn.addEventListener("click", () => {
-		// cambiar estilo css
-		btnFormat = btn.textContent.replace(/[%]/g, ""); // eliminar el simbolo %
-		if (btnFormat) {
-			btn.classList.add("btn-focus");
-		} else {
-			btn.classList.remove("btn-focus");
-		}
-
-		valorFactura = capturarFactura();
-		total = calcularPropinas(valorFactura, btnFormat);
-		console.log(valorFactura);
-		console.log(btnFormat);
-		console.log(total);
-	});
+	btn.addEventListener("click", manejarBotones);
 });
 
 // Capturar porcentaje custom
-porcentajePropina.addEventListener("input", (porcentajeCustom) => {
-	// agregarPorcentaje(porcentajeCustom.target.value);
-	// calcularPropinas();
-	console.log(porcentajeCustom.target.value);
-});
+porcentajePropina.addEventListener("input", calcularPropina);
 
 // Capturar numero de personas
-numeroPersonas.addEventListener("input", (personas) => {
-	// agregarNumeroPersonas(personas.target.value);
-	console.log(personas.target.value);
-});
+numeroPersonas.addEventListener("input", calcularPropina);
 
-const agregarFactura = (num) => {};
+function manejarBotones(e) {
+	btns.forEach((btn) => {
+		btn.classList.remove("btn-focus");
+		if (e.target.innerHTML == btn.innerHTML) {
+			btn.classList.add("btn-focus");
+			btnFormat = btn.innerHTML.replace(/[%]/g, "");
+			valorPorcentaje = btnFormat / 100;
+		}
+	});
+
+	porcentajePropina.value = "";
+	calcularPropina();
+}
