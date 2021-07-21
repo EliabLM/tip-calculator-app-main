@@ -1,5 +1,3 @@
-// Funcionalidad
-
 // Entradas
 const facturaInput = document.querySelector(".input-factura-total");
 const porcentajePropina = document.querySelector(".input-porcentajes-propina");
