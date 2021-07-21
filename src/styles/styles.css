@@ -20,6 +20,7 @@
 
 	/* Algunas configuraciones */
 	--max-width: 1440px;
+	--min-widht: 375px;
 	--fixed-width: 620px;
 	--border-radius: 25px;
 }
@@ -39,26 +40,23 @@ body {
 	font-size: var(--fs-primary);
 }
 
-.title {
-	text-align: center;
-	letter-spacing: 0.35rem;
-	text-transform: uppercase;
-	color: rgb(66, 101, 103);
-	align-content: center;
-	margin: 100px auto 80px;
-	font-size: 30px;
+header {
+	display: flex;
+	justify-content: center;
+	margin-top: 50px;
+	margin-bottom: 40px;
+	width: 100%;
+	min-width: var(--min-widht);
 }
 
 .container {
 	display: flex;
-	border-radius: var(--border-radius);
-	margin: 50px auto 50px;
-	width: 920px;
-	height: 485px;
-	padding-top: 28px;
-	padding-bottom: 28px;
+	flex-direction: column;
+	align-items: center;
+	margin: 0px auto 50px;
+	width: var(--min-widht);
 	background: var(--clr-white);
-	justify-content: space-between;
+	border-radius: var(--border-radius);
 }
 
 /* Elimina decoradores de los inputs tipo numero */
@@ -74,19 +72,20 @@ input[type="number"] {
 /* ==================================================== */
 /* ================= Section entradas ================= */
 /* ==================================================== */
+
 .section-entradas {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	background: var(--clr-white);
-	width: 415px;
-	border-radius: var(--border-radius);
-	margin-left: 28px;
+	width: 330px;
+	height: 450px;
+	margin: 10px;
 	overflow: hidden;
 }
 
+/* FACTURA */
 .factura-total {
-	margin: 24px 10px 20px 10px;
+	margin: 24px 10px 15px 10px;
 }
 
 .factura-total h3 {
@@ -97,7 +96,7 @@ input[type="number"] {
 
 .input-factura-total {
 	background-color: var(--clr-light-grayish-cyan-2);
-	background-image: url(../images/icon-dollar.svg);
+	background-image: url(../../images/icon-dollar.svg);
 	background-repeat: no-repeat;
 	background-position: 10px center;
 	padding-right: 10px;
@@ -121,8 +120,9 @@ input[type="number"] {
 	color: var(--clr-dark-grayish-cyan-2);
 }
 
+/* BOTONES DE PORCENTAJES */
 .porcentajes-propina {
-	margin: 24px 10px 20px 10px;
+	margin: 15px 10px 15px 10px;
 }
 
 .porcentajes-propina h3 {
@@ -133,9 +133,10 @@ input[type="number"] {
 
 .porcentajes-propina-btns {
 	display: grid;
-	grid-gap: 10px;
-	grid-template-columns: repeat(3, 1fr);
-	grid-template-rows: 1fr 1fr;
+	height: 176px;
+	grid-gap: 18px;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr 1fr 1fr;
 }
 
 .btn {
@@ -170,12 +171,14 @@ input[type="number"] {
 	font-weight: bold;
 	text-align: right;
 	width: 100%;
-	height: 48px;
+	height: 47px;
 	border: none;
 }
 
 .input-porcentajes-propina::placeholder {
-	text-align: center;
+	font-size: 22px;
+	text-align: right;
+	margin-right: 6px;
 }
 
 .input-porcentajes-propina:focus {
@@ -183,8 +186,9 @@ input[type="number"] {
 	border: 2px solid var(--clr-primary-1);
 }
 
+/* NUMERO DE PERSONAS */
 .numero-personas {
-	margin: 24px 10px 20px 10px;
+	margin: 15px 10px 20px 10px;
 }
 
 .numero-personas__title {
@@ -199,22 +203,21 @@ input[type="number"] {
 }
 
 .numero-personas__title h4 {
-	font-size: 18px;
-	margin-bottom: 3px;
+	font-size: 16px;
+	margin-bottom: 5px;
 }
 
 .show-title {
 	color: orange;
 }
 
-/* Quitar con JavaScript */
 .no-mostrar {
 	visibility: hidden;
 }
 
 .input-numero-personas {
 	background-color: var(--clr-light-grayish-cyan-2);
-	background-image: url(../images/icon-person.svg);
+	background-image: url(../../images/icon-person.svg);
 	background-repeat: no-repeat;
 	background-position: 10px center;
 	padding-right: 10px;
@@ -242,21 +245,21 @@ input[type="number"] {
 	flex-direction: column;
 	justify-content: space-around;
 	background: var(--clr-very-dark-cyan);
-	width: 415px;
-	border-radius: var(--border-radius);
-	margin-right: 28px;
+	width: 330px;
+	height: 260px;
+	border-radius: 20px;
+	margin: 15px 10px 30px 10px;
 	overflow: hidden;
+	padding: 30px 10px 15px 10px;
 }
 
 .propina-persona {
-	/* outline: 1px solid white; */
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 336px;
+	width: 286px;
 	height: 50px;
 	align-self: center;
-	margin: 55px 10px 20px 10px;
 }
 
 .propina-persona h3 {
@@ -271,17 +274,16 @@ input[type="number"] {
 
 .propina-persona h4 {
 	color: var(--clr-primary-1);
-	font-size: 46px;
+	font-size: 30px;
 }
 
 .propina-total {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: 336px;
+	width: 286px;
 	height: 50px;
 	align-self: center;
-	margin: 24px 10px 20px 10px;
 }
 
 .propina-total h3 {
@@ -295,13 +297,12 @@ input[type="number"] {
 
 .propina-total h4 {
 	color: var(--clr-primary-1);
-	font-size: 46px;
+	font-size: 30px;
 }
 
 .reset {
-	width: 336px;
+	width: 286px;
 	height: 50px;
-	margin: 100px 10px 40px 10px;
 	border: none;
 	align-self: center;
 }
@@ -312,7 +313,7 @@ input[type="number"] {
 	border: none;
 	border-radius: 5px;
 	font-family: var(--fs-primary);
-	font-size: var(--fs-primary);
+	font-size: 20px;
 	font-weight: bold;
 	text-transform: uppercase;
 	color: var(--clr-very-dark-cyan);
@@ -327,6 +328,10 @@ input[type="number"] {
 /* ================================================ */
 /* ==================== Footer ==================== */
 /* ================================================ */
+footer {
+	padding-bottom: 15px;
+}
+
 .attribution {
 	text-align: center;
 	font-size: 11px;

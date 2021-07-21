@@ -1,0 +1,140 @@
+@media (min-width: 930px) {
+	header {
+		margin-top: 160px;
+		margin-bottom: 86px;
+	}
+
+	.container {
+		flex-direction: row;
+		border-radius: var(--border-radius);
+		margin: 50px auto 50px;
+		width: 920px;
+		height: 485px;
+		padding: 15px;
+		background: var(--clr-white);
+		justify-content: space-between;
+	}
+
+	/* ==================================================== */
+	/* ================= Section entradas ================= */
+	/* ==================================================== */
+	.section-entradas {
+		/* outline: 1px solid; */
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		background: var(--clr-white);
+		width: 415px;
+		height: 418px;
+		border-radius: var(--border-radius);
+		overflow: hidden;
+		margin-bottom: 30px;
+		margin: 0px 0px 0px 30px;
+	}
+
+	/* FACTURA */
+	.factura-total {
+		margin: 24px 10px 20px 10px;
+	}
+
+	.porcentajes-propina {
+		margin: 24px 10px 20px 10px;
+	}
+
+	.porcentajes-propina-btns {
+		display: grid;
+		height: 110px;
+		grid-gap: 15px;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: 1fr 1fr;
+	}
+
+	.input-porcentajes-propina {
+		height: 48px;
+	}
+
+	.input-porcentajes-propina::placeholder {
+		text-align: center;
+	}
+
+	.numero-personas {
+		margin: 24px 10px 20px 10px;
+	}
+
+	.numero-personas__title h4 {
+		font-size: 18px;
+		margin-bottom: 3px;
+	}
+
+	.no-mostrar {
+		visibility: hidden;
+	}
+
+	/* ==================================================== */
+	/* ================= Section salidas ================= */
+	/* ==================================================== */
+	.section-salidas {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		background: var(--clr-very-dark-cyan);
+		width: 415px;
+		height: 418px;
+		border-radius: var(--border-radius);
+		margin-right: 28px;
+		overflow: hidden;
+		margin-bottom: 10px;
+	}
+
+	.propina-persona {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 336px;
+		height: 50px;
+		align-self: center;
+		margin: 20px 10px 15px 10px;
+	}
+
+	.propina-persona h4 {
+		color: var(--clr-primary-1);
+		font-size: 46px;
+	}
+
+	.propina-total {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 336px;
+		height: 50px;
+		align-self: center;
+		margin: 24px 10px 20px 10px;
+	}
+
+	.propina-total h4 {
+		color: var(--clr-primary-1);
+		font-size: 46px;
+	}
+
+	.reset {
+		width: 336px;
+		height: 50px;
+		margin: 80px 0px 20px 0px;
+		border: none;
+		align-self: center;
+	}
+
+	.btn-reset {
+		width: 100%;
+		height: 100%;
+		border: none;
+		border-radius: 5px;
+		font-family: var(--fs-primary);
+		font-size: var(--fs-primary);
+		font-weight: bold;
+		text-transform: uppercase;
+		color: var(--clr-very-dark-cyan);
+		background-color: rgb(13, 104, 109);
+		cursor: pointer;
+	}
+}
