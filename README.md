@@ -44,6 +44,6 @@ Users should be able to:
 
 ## Author
 
-- Website - [Eliab López](https://github.com/eliablm)
+- Website - [Eliab López](https://eliablm.github.io/EliabLM/)
 - Frontend Mentor - [@EliabLM](https://www.frontendmentor.io/profile/EliabLM)
 - Twitter - [@EliabLM](https://www.twitter.com/EliabLM)
